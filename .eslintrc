@@ -1,0 +1,13 @@
+{
+    "rules": {
+        "import/prefer-default-export": "off",
+        "global-require":"warn",
+        "no-plusplus":"off"
+    },
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "extends": [
+        "airbnb-typescript/base"
+    ]
+}
