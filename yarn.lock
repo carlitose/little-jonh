@@ -610,7 +610,7 @@
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/@xmldom/xmldom/-/xmldom-0.7.5.tgz#09fa51e356d07d0be200642b0e4f91d8e6dd408d"
   integrity sha1-CfpR41bQfQviAGQrDk+R2ObdQI0=
 
-accepts@~1.3.7:
+accepts@^1.3.7, accepts@~1.3.7:
   version "1.3.7"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"
   integrity sha1-UxvHJlF6OytB+FACHGzBXqq1B80=
@@ -1068,7 +1068,7 @@ confusing-browser-globals@^1.0.10:
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/confusing-browser-globals/-/confusing-browser-globals-1.0.10.tgz#30d1e7f3d1b882b25ec4933d1d1adac353d20a59"
   integrity sha1-MNHn89G4grJexJM9HRraw1PSClk=
 
-content-disposition@0.5.3:
+content-disposition@0.5.3, content-disposition@^0.5.3:
   version "0.5.3"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/content-disposition/-/content-disposition-0.5.3.tgz#e130caf7e7279087c5616c2007d0485698984fbd"
   integrity sha1-4TDK9+cnkIfFYWwgB9BIVpiYT70=
@@ -1190,7 +1190,7 @@ define-properties@^1.1.3:
   dependencies:
     object-keys "^1.0.12"
 
-depd@~1.1.2:
+depd@^1.1.0, depd@~1.1.2:
   version "1.1.2"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
@@ -1512,6 +1512,13 @@ events@^3.3.0:
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha1-Mala0Kkk4tLEGagTrrLE6HjqdAA=
 
+express-request-mock@^3.1.0:
+  version "3.1.0"
+  resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/express-request-mock/-/express-request-mock-3.1.0.tgz#fbe3d58e17d72f4af1cc625712ddf7b283bacd32"
+  integrity sha1-++PVjhfXL0rxzGJXEt33soO6zTI=
+  dependencies:
+    node-mocks-http "^1.9.0"
+
 express@^4.17.1:
   version "4.17.1"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -1716,7 +1723,7 @@ forwarded@0.2.0:
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/forwarded/-/forwarded-0.2.0.tgz#2269936428aad4c15c7ebe9779a84bf0b2a81811"
   integrity sha1-ImmTZCiq1MFcfr6XeahL8LKoGBE=
 
-fresh@0.5.2:
+fresh@0.5.2, fresh@^0.5.2:
   version "0.5.2"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
@@ -2413,7 +2420,7 @@ media-typer@0.3.0:
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-merge-descriptors@1.0.1:
+merge-descriptors@1.0.1, merge-descriptors@^1.0.1:
   version "1.0.1"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
   integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
@@ -2423,7 +2430,7 @@ merge2@^1.3.0:
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha1-Q2iJL4hekHRVpv19xVwMnUBJkK4=
 
-methods@~1.1.2:
+methods@^1.1.2, methods@~1.1.2:
   version "1.1.2"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
@@ -2448,7 +2455,7 @@ mime-types@~2.1.24:
   dependencies:
     mime-db "1.51.0"
 
-mime@1.6.0:
+mime@1.6.0, mime@^1.3.4:
   version "1.6.0"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
   integrity sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=
@@ -2602,6 +2609,22 @@ node-match-path@^0.6.3:
   version "0.6.3"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/node-match-path/-/node-match-path-0.6.3.tgz#55dd8443d547f066937a0752dce462ea7dc27551"
   integrity sha1-Vd2EQ9VH8GaTegdS3ORi6n3CdVE=
+
+node-mocks-http@^1.9.0:
+  version "1.11.0"
+  resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/node-mocks-http/-/node-mocks-http-1.11.0.tgz#defc0febf6b935f08245397d47534a8de592996e"
+  integrity sha1-3vwP6/a5NfCCRTl9R1NKjeWSmW4=
+  dependencies:
+    accepts "^1.3.7"
+    content-disposition "^0.5.3"
+    depd "^1.1.0"
+    fresh "^0.5.2"
+    merge-descriptors "^1.0.1"
+    methods "^1.1.2"
+    mime "^1.3.4"
+    parseurl "^1.3.3"
+    range-parser "^1.2.0"
+    type-is "^1.6.18"
 
 node-preload@^0.2.1:
   version "0.2.1"
@@ -2832,7 +2855,7 @@ parent-module@^1.0.0:
   dependencies:
     callsites "^3.0.0"
 
-parseurl@~1.3.3:
+parseurl@^1.3.3, parseurl@~1.3.3:
   version "1.3.3"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
   integrity sha1-naGee+6NEt/wUT7Vt2lXeTvC6NQ=
@@ -2985,7 +3008,7 @@ randombytes@^2.1.0:
   dependencies:
     safe-buffer "^5.1.0"
 
-range-parser@~1.2.1:
+range-parser@^1.2.0, range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
   integrity sha1-PPNwI9GZ4cJNGlW4SADC8+ZGgDE=
@@ -3243,10 +3266,15 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sinon-chai@^3.5.0:
+sinon-chai@^3.7.0:
   version "3.7.0"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/sinon-chai/-/sinon-chai-3.7.0.tgz#cfb7dec1c50990ed18c153f1840721cf13139783"
   integrity sha1-z7fewcUJkO0YwVPxhAchzxMTl4M=
+
+sinon-express-mock@^2.2.1:
+  version "2.2.1"
+  resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/sinon-express-mock/-/sinon-express-mock-2.2.1.tgz#245646f06710efd98134dbe15b3fd153ebb0e67e"
+  integrity sha1-JFZG8GcQ79mBNNvhWz/RU+uw5n4=
 
 sinon@^12.0.0:
   version "12.0.1"
@@ -3587,7 +3615,7 @@ type-fest@^1.2.2:
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/type-fest/-/type-fest-1.4.0.tgz#e9fb813fe3bf1744ec359d55d1affefa76f14be1"
   integrity sha1-6fuBP+O/F0TsNZ1V0a/++nbxS+E=
 
-type-is@~1.6.17, type-is@~1.6.18:
+type-is@^1.6.18, type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
   resolved "https://artifactory.klarna.net/artifactory/api/npm/v-npm-production/type-is/-/type-is-1.6.18.tgz#4e552cd05df09467dcbc4ef739de89f2cf37c131"
   integrity sha1-TlUs0F3wlGfcvE73Od6J8s83wTE=

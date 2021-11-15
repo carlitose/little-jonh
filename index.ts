@@ -3,6 +3,7 @@ import passport from 'passport';
 import { basicStrategy } from './lib/passportStrategies';
 import { getHistoryPrice } from './lib/stocksAPI';
 import winston from 'winston';
+import { isItInlcluded } from './lib/middleware';
 
 const logger = winston.createLogger({
   level: 'info',
@@ -27,8 +28,8 @@ app.get('/', passport.authenticate('basic', { session: false }), (req, res) => {
 app.get(
   '/tickers/:symbol/history',
   passport.authenticate('basic', { session: false }),
+  isItInlcluded,
   async ({ params:{ symbol } }, res) => {
-    logger.info(symbol);
     const response = await getHistoryPrice({ key, symbol });
     res.json(response);
     res.end();
