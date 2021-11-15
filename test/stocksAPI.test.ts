@@ -12,17 +12,12 @@ describe('stockApi', ()=>{
 
   const server = setupServer(
     rest.get('https://yh-finance.p.rapidapi.com/market/v2/get-quotes', (req, res, ctx) => {
-      // Respond with a mocked user token that gets persisted
-      // in the `sessionStorage` by the `Login` component.
       return res(ctx.body(actual));
     }),
     rest.get('https://yh-finance.p.rapidapi.com/stock/v3/get-historical-data', (req, res, ctx) => {
-      // Respond with a mocked user token that gets persisted
-      // in the `sessionStorage` by the `Login` component.
       return res(ctx.body(history));
     }),
   );
-    // Enable API mocking before tests.
 
   server.listen();
 
@@ -36,6 +31,6 @@ describe('stockApi', ()=>{
   it('getHistoryPrice', async () => {
     const response = await getHistoryPrice({ key:'12345', symbol:'V' });
     expect(response).to.have.length(90);
-    expect(response[0]).to.deep.equals({ price:214.46, date:'2021-11-15' });
+    expect(response?.[0]).to.deep.equals({ price:214.46, date:'2021-11-15' });
   });
 });

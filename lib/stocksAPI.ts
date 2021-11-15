@@ -1,5 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { convertData } from './utils';
+import logger from 'winston';
 
 const generateOptions = (
   url: string,
@@ -27,8 +28,12 @@ export const getHistoryPrice = async ({
     key,
     symbol,
   );
-  const response = await axios.request(options);
-  return [...response.data.prices.filter(({ close }: { close:number })=>close).splice(0, 90)].map((el) => convertData(el));
+  try {
+    const response = await axios.request(options);
+    return [...response.data.prices.filter(({ close }: { close:number })=>close).splice(0, 90)].map((el) => convertData(el));
+  } catch (err){
+    logger.error(err);
+  }
 };
 
 export const getActualPrice = async ({
@@ -43,9 +48,13 @@ export const getActualPrice = async ({
     key,
     symbol,
   );
-  const response = await axios.request(options);
-  return {
-    price: Number(response.data.quoteResponse.result[0].regularMarketPrice.toFixed(2)),
-    symbol,
-  };
+  try {
+    const response = await axios.request(options);
+    return {
+      price: Number(response.data.quoteResponse.result[0].regularMarketPrice.toFixed(2)),
+      symbol,
+    };
+  } catch (err){
+    logger.error(err);
+  }
 };
