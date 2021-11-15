@@ -1,7 +1,7 @@
 import express from 'express';
 import passport from 'passport';
 import { basicStrategy } from './lib/passportStrategies';
-import { getHistoryPrice } from './lib/stocksAPI';
+import { getHistoryPrice, getPorfolio } from './lib/stocksAPI';
 import winston from 'winston';
 import { isItInlcluded } from './lib/middleware';
 
@@ -24,6 +24,16 @@ app.use(passport.initialize());
 app.get('/', passport.authenticate('basic', { session: false }), (req, res) => {
   res.send('Hello world!');
 });
+
+app.get(
+  '/tickers',
+  passport.authenticate('basic', { session: false }),
+  async (req : any, res) => {
+    const response = await getPorfolio({ key, username:req.user.username });
+    res.json(response);
+    res.end();
+  },
+);
 
 app.get(
   '/tickers/:symbol/history',

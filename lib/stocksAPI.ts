@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { convertData } from './utils';
+import { convertData, generatorPorfolio } from './utils';
 import logger from 'winston';
 
 const generateOptions = (
@@ -9,7 +9,7 @@ const generateOptions = (
 ): AxiosRequestConfig => ({
   method: 'GET',
   url,
-  params: { symbol, region: 'US' },
+  params: { symbol, region: 'US', symbols:symbol },
   headers: {
     'x-rapidapi-host': 'yh-finance.p.rapidapi.com',
     'x-rapidapi-key': key,
@@ -57,4 +57,25 @@ export const getActualPrice = async ({
   } catch (err){
     logger.error(err);
   }
+};
+
+export const getPorfolio = async ({
+  key,
+  username,
+}: {
+  key: string;
+  username: string;
+})=>{
+  logger.info('PIPPO', username);
+  const porfolio = generatorPorfolio(username);
+  logger.info(porfolio);
+  const porfolioCompleted:{ price:number, symbol:string }[]  = [];
+  for (let i = 0; i < porfolio.length; i++){
+    logger.info({ key, symbol:porfolio[i] });
+    const actualPrice = await getActualPrice({ key, symbol:porfolio[i] });
+    logger.info(actualPrice);
+    if (actualPrice)
+      porfolioCompleted.push(actualPrice);
+  }
+  return porfolioCompleted;
 };
