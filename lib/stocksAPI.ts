@@ -28,7 +28,7 @@ export const getHistoryPrice = async ({
     symbol,
   );
   const response = await axios.request(options);
-  return [...response.data.prices.splice(0, 90)].map((el) => convertData(el));
+  return [...response.data.prices.filter(({ close }: { close:number })=>close).splice(0, 90)].map((el) => convertData(el));
 };
 
 export const getActualPrice = async ({
@@ -45,7 +45,7 @@ export const getActualPrice = async ({
   );
   const response = await axios.request(options);
   return {
-    price: response.data.quoteResponse.results[0].regularMarketPrice,
+    price: Number(response.data.quoteResponse.result[0].regularMarketPrice.toFixed(2)),
     symbol,
   };
 };

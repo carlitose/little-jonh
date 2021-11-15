@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { serializeUser } from '../lib/passportStrategies';
 import sinon from 'sinon';
-describe('passportStrategy', ()=>{
+describe('passportStrategies', ()=>{
 
   it('user right', () => {
     const done = sinon.spy();
