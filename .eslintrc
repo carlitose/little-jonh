@@ -9,5 +9,6 @@
     },
     "extends": [
         "airbnb-typescript/base"
-    ]
+    ],
+    "plugins": ["import"]
 }
