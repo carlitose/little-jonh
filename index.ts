@@ -16,7 +16,7 @@ const logger = winston.createLogger({
 const app = express();
 const port = 8080;
 
-const key = '050f13546fmsha0487ca147d4d91p1e7ba0jsnc003443716bc';
+const key = '123';
 passport.use(basicStrategy);
 
 app.use(passport.initialize());
