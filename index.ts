@@ -16,7 +16,10 @@ const logger = winston.createLogger({
 const app = express();
 const port = 8080;
 
-const key = '123';
+const key = process.env.RAPID_API_KEY;
+if (!key){
+  throw Error('no Rapid Key Present');
+}
 passport.use(basicStrategy);
 
 app.use(passport.initialize());
